@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- "Latest News" -->
+        <div class="container">
+            <div class="row">
+                <!-- Main content -->
+              <section class="col-lg-8 col-md-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="text-uppercase">Latest News</h2>
+                        <hr class="templatemo-section-header-hr">
+                        <p class="text-uppercase templatemo-section-subheader margin-bottom-0">View All Posts</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <article class="templatemo-blog-post">
+                            <div class="post-img-container">
+                                <img src="{% static 'img/post-1.jpg' %}" alt="Post 1" class="post-img img-responsive">
+                                <div class="templatemo-post-social">
+                                    <div class="flex-center margin-top-10">
+                                        <i class="fa fa-heart fa-2x red-bg"></i>
+                                    </div>
+                                    <div class="flex-center margin-top-10">
+                                        <i class="fa fa-comments-o fa-2x gold-bg"></i>
+                                    </div>
+                                </div>
+                                <div class="templatemo-post-date gold-text">
+                                    <div>
+                                        <div class="text-center date">20</div>
+                                        <div class="text-center">January</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <h3 class="text-uppercase">Aenean Sollicitudin Auctor</h3>
+                            </div>
+                            <div class="post-meta-data">
+                                <p class="gold-text"><i>Posted by Admin Dev / Web Design / Comments: 116 / Views: 6,359</i></p>
+                            </div>
+                            <div class="post-excerpt gray-text">
+                                <p>Aenean non ex neque. Sed vitae purus in urna volutpat iaculis. Ut congue vel tortor in tincidunt. Maecenas varius pellentesque odio sed facilisis. In ullamcorper augue quis nunc pellentesque faucibus. Proin interdum finibus enim, vel ultrices ipsum vulputate vel.</p>
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+
+                    </div>
+                </div>
+            </section> <!-- end "Latest News" -->
+
+
+            <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
+                <div class="aside-block">
+                    <h4 class="text-uppercase"><i>Categories</i></h4>
+                    <hr class="gold-hr">
+                    <ul class="category-list">
+                        <li><a href="#">Aenean Sollicitudin</a></li>
+                        <li><a href="#">Lorem Quis Bibendum Auctor</a></li>
+                        <li><a href="#">Bnisi Elit Consequat Ipsum</a></li>
+                        <li><a href="#">Nec SagittisSem Nibh ld elit</a></li>
+                        <li><a href="#">Duis Sed Bdio Ritmet Consequat</a></li>
+                    </ul>
+                </div>
+                <div class="aside-block">
+                    <h4 class="text-uppercase"><i>Recent Posts</i></h4>
+                    <hr class="gold-hr">
+                    <article class="aside-post-excerpt">
+                        <h5 class="text-uppercase">Aenean Sollicitudin Lorem</h5>
+                        <p class="gold-text"><i>21 January 2084</i></p>
+                        <p>Integer lorem enim, pretium suscipit lectus vitae, sagittis aliquet urna. Vivamus interdum pellentesque urna, at pharetra felis tincidunt in.</p>
+                        <p><b><i>Author: Admin</i></b></p>
+                    </article>
+                    <hr class="gold-hr">
+                    <article class="aside-post-excerpt">
+                        <h5 class="text-uppercase">Aenean Sollicitudin Lorem</h5>
+                        <p class="gold-text"><i>19 January 2084</i></p>
+                        <p>Integer lorem enim, pretium suscipit lectus vitae, sagittis aliquet urna. Vivamus interdum pellentesque urna, at pharetra felis tincidunt in.</p>
+                        <p><b><i>Author: Admin</i></b></p>
+                    </article>
+                </div> <!-- /.aside-block -->
+                <div class="aside-block">
+                    <h4 class="text-uppercase"><i>Tags</i></h4>
+                    <hr class="gold-hr">
+                    <ul class="tag-list">
+                        <li><a href="#">Ad tibique</a></li>
+                        <li><a href="#">Definiebas</a></li>
+                        <li><a href="#">Lorem libris</a></li>
+                        <li><a href="#">Magna erant qu</a></li>
+                        <li><a href="#">Mandamus praesen</a></li>
+                        <li><a href="#">Propriae</a></li>
+                        <li><a href="#">Quod</a></li>
+                    </ul>
+                </div> <!-- /.aside-block -->
+            </aside>
+            </div>
+
+
+        </div>
+{% endblock %}
