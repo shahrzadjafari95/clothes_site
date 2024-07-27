@@ -6,6 +6,7 @@ app_name = 'clothes'
 
 urlpatterns = [path('', views.index,  name='home_page'),
                path('contact/', views.contact, name='contact'),
+               path('men-clothes/', views.men, name='men-clothes')
 
 
 ]
