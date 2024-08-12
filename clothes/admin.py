@@ -22,3 +22,8 @@ class All_Type_Clothes_Admin(admin.ModelAdmin):
     empty_value_display = '-empty-'
     ordering = ['-created_date']
 
+
+class Category_Admin(admin.ModelAdmin):
+    search_fields = ('category',)
+    list_filter = ['category']
+
