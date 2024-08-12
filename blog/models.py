@@ -24,3 +24,6 @@ class Post(models.Model):
     class Meta:
         ordering = ['-created_date']
 
+    def __str__(self):
+        return '{} {}'.format(self.title, self.pk)
+
