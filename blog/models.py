@@ -15,3 +15,4 @@ class Post(models.Model):
     content = models.TextField()
     category = models.ManyToManyField(Category)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    counted_view = models.BooleanField(default=0)
