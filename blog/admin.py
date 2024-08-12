@@ -12,3 +12,6 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content', 'category']
 
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id',)
+
