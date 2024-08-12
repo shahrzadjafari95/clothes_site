@@ -14,3 +14,11 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = ['-created_date']
 
 
+class All_Type_Clothes_Admin(admin.ModelAdmin):
+    data_hierarchy = 'created_date'
+    list_display = ['gender', 'category', 'price', 'status', 'created_date']
+    list_filter = ['created_date', 'status', 'category', 'gender']
+    search_fields = ('gender',)
+    empty_value_display = '-empty-'
+    ordering = ['-created_date']
+
