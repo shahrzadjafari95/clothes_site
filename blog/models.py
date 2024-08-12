@@ -16,3 +16,4 @@ class Post(models.Model):
     category = models.ManyToManyField(Category)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     counted_view = models.BooleanField(default=0)
+    status = models.BooleanField(default=False)
