@@ -30,3 +30,4 @@ class Category_Admin(admin.ModelAdmin):
 
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(All_Type_Clothes, All_Type_Clothes_Admin)
+admin.site.register(Category, Category_Admin)
