@@ -27,3 +27,5 @@ class Category_Admin(admin.ModelAdmin):
     search_fields = ('category',)
     list_filter = ['category']
 
+
+admin.site.register(Contact, ContactAdmin)
