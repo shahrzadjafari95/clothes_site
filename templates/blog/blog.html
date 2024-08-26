@@ -132,17 +132,7 @@
                 </div>
             </section> <!-- end "Latest News" -->
             <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
-                <div class="aside-block">
-                    <h4 class="text-uppercase"><i>Categories</i></h4>
-                    <hr class="gold-hr">
-                    <ul class="category-list">
-                        <li><a href="#">Aenean Sollicitudin</a></li>
-                        <li><a href="#">Lorem Quis Bibendum Auctor</a></li>
-                        <li><a href="#">Bnisi Elit Consequat Ipsum</a></li>
-                        <li><a href="#">Nec SagittisSem Nibh ld elit</a></li>
-                        <li><a href="#">Duis Sed Bdio Ritmet Consequat</a></li>
-                    </ul>
-                </div>
+                {% include 'blog/categories.html' %}
                 {% include 'blog/recent-post.html' %}
                 {% include 'blog/tag.html' %}
             </aside>
