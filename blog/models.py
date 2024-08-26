@@ -3,6 +3,13 @@ from django.db import models
 
 
 # Create your models here.
+STATUS_CHOICES = (
+    ('P', 'Pending'),
+    ('A', 'Approved'),
+    ('R', 'Rejected'),
+)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
