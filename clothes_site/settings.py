@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clothes',
     'blog',
+    'rangefilter',
+    'django_admin_filters',
+    'django_admin_listfilter_dropdown',
+
 ]
 
 MIDDLEWARE = [
