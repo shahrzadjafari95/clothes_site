@@ -1,6 +1,11 @@
+from PIL import Image
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from django_resized import ResizedImageField
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+import sys
 
 # Create your models here.
 STATUS_CHOICES = (
@@ -28,6 +33,18 @@ class Post(models.Model):
     published_date = models.DateTimeField(null=True)
     created_date = models.DateTimeField(auto_now_add=True)  # when the object first created,set current date and time
     update_date = models.DateTimeField(auto_now=True)  # when the object updated, save current date and time
+
+    def save(self):  # this method resized all image
+        im = Image.open(self.img)  # Opening the uploaded image
+        output = BytesIO()
+        im = im.resize((700, 353))  # Resize/modify the image
+        im.save(output, format='JPEG', quality=100)  # after modifications, save it to the output
+        output.seek(0)
+        # change the imagefield value to be the newly modified image value
+        self.img = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.img.name.split('.')[0], 'image/jpeg',
+                                          sys.getsizeof(output), None)
+
+        super(Post, self).save()
 
     class Meta:
         ordering = ['-created_date']
