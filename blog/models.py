@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
 # Create your models here.
 STATUS_CHOICES = (
     ('P', 'Pending'),
@@ -20,7 +19,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
-    # image = models.ImageField(upload_to='blog/')
+    img = models.ImageField(upload_to='blog/', default='blog/default.jpg')
     category = models.ManyToManyField(Category)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     counted_view = models.IntegerField(default=0)
