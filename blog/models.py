@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 STATUS_CHOICES = (
@@ -34,3 +35,6 @@ class Post(models.Model):
     def __str__(self):
         return '{} {}'.format(self.title, self.pk)
 
+    # define an url for post based on id
+    def get_absolute_url(self):
+        return reverse('blog:single-blog', kwargs={'pid': self.pk})
