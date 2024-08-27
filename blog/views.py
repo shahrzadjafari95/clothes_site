@@ -17,3 +17,6 @@ def single_blog(request, pid):
     post.counted_view += 1
     post.save()
     contex = {'post': post,
+              # filter posts according published_date that great than current post published_date
+              'next': posts.filter(published_date__gt=post.published_date).order_by('published_date').first(),
+              'previous': posts.filter(published_date__lt=post.published_date).order_by('-published_date').first()}
