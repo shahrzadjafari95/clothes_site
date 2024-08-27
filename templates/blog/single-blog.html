@@ -34,6 +34,11 @@
                                 <p class="gold-text">
                                     <i>
                                     Posted by: {{post.author.get_full_name}} /
+                                    Categories:
+                                    {% for cat in post.category.all %}
+                                    {{ cat.name }}
+                                    {%if not forloop.last%},{%endif%}
+                                    {% endfor %} /
                             </div>
                             <div class="post-excerpt gray-text">
                                 <p>{{post.content}}</p>
