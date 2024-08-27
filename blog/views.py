@@ -16,3 +16,4 @@ def single_blog(request, pid):
     post = get_object_or_404(posts, pk=pid)
     post.counted_view += 1
     post.save()
+    contex = {'post': post,
