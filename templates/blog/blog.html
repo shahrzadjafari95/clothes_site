@@ -36,7 +36,9 @@
                                 </div>
                             </div>
                             <div class="post-title">
-                                <h3 class="text-uppercase">Aenean Sollicitudin Auctor</h3>
+                                <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10" >
+                                    <h3 class="text-uppercase">{{post.title}}</h3>
+                                </a>
                             </div>
                             <div class="post-meta-data">
                                 <p class="gold-text"><i>Posted by Admin Dev / Web Design / Comments: 116 / Views: 6,359</i></p>
