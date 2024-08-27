@@ -11,5 +11,5 @@ def blog_home(request):
     return render(request, 'blog/blog.html', context)
 
 
-def single_blog(reqest):
-    return render(reqest, 'blog/single-blog.html')
+def single_blog(request, pid):
+    posts = Post.objects.filter(status='A', published_date__lte=timezone.now())
