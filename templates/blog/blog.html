@@ -46,6 +46,7 @@
                             <div class="post-excerpt gray-text">
                                 <p>{{post.content|truncatewords:20}}</p>
                             </div>
+                            <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10 post-read-more">
                                 <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
                             </a>
                             <hr>
