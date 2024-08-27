@@ -15,6 +15,7 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for post in posts %}
                     <div class="col-lg-12">
                         <article class="templatemo-blog-post">
                             <div class="post-img-container">
@@ -43,76 +44,12 @@
                             <div class="post-excerpt gray-text">
                                 <p>Aenean non ex neque. Sed vitae purus in urna volutpat iaculis. Ut congue vel tortor in tincidunt. Maecenas varius pellentesque odio sed facilisis. In ullamcorper augue quis nunc pellentesque faucibus. Proin interdum finibus enim, vel ultrices ipsum vulputate vel.</p>
                             </div>
-                            <a href="{% url 'blog:single-blog' %}" class="gray-text margin-top-10 post-read-more">
-                                <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
-                            </a>
-                            <hr>
-                        </article>
-                         <article class="templatemo-blog-post">
-                            <div class="post-img-container">
-                                <img src="{% static 'img/post-2.jpg' %}" alt="Post 1" class="post-img img-responsive">
-                                <div class="templatemo-post-social">
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-heart fa-2x red-bg"></i>
-                                    </div>
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-comments-o fa-2x gold-bg"></i>
-                                    </div>
-                                </div>
-                                <div class="templatemo-post-date gold-text">
-                                    <div>
-                                        <div class="text-center date">19</div>
-                                        <div class="text-center">January</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <h3 class="text-uppercase">Mobi Accumsan Ipsums Ametbelit</h3>
-                            </div>
-                            <div class="post-meta-data">
-                                <p class="gold-text"><i>Posted by Admin Dev / Uncategorized / Comments: 256 / Views: 8,214</i></p>
-                            </div>
-                            <div class="post-excerpt gray-text">
-                                <p>Aenean non ex neque. Sed vitae purus in urna volutpat iaculis. Ut congue vel tortor in tincidunt. Maecenas varius pellentesque odio sed facilisis. In ullamcorper augue quis nunc pellentesque faucibus. Proin interdum finibus enim, vel ultrices ipsum vulputate vel.</p>
-                            </div>
-                            <a href="{% url 'blog:single-blog' %}" class="gray-text margin-top-10">
-                                <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
-                            </a>
-                            <hr>
-                        </article>
-                        <article class="templatemo-blog-post">
-                            <div class="post-img-container">
-                                <img src="{% static 'img/post-3.jpg' %}" alt="Post 1" class="post-img img-responsive">
-                                <div class="templatemo-post-social">
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-heart fa-2x red-bg"></i>
-                                    </div>
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-comments-o fa-2x gold-bg"></i>
-                                    </div>
-                                </div>
-                                <div class="templatemo-post-date gold-text">
-                                    <div>
-                                        <div class="text-center date">16</div>
-                                        <div class="text-center">January</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <h3 class="text-uppercase">Nam Nec Tellus Odio Incuit</h3>
-                            </div>
-                            <div class="post-meta-data">
-                                <p class="gold-text"><i>Posted by Admin Dev / Uncategorized / Comments: 512 / Views: 10,588</i></p>
-                            </div>
-                            <div class="post-excerpt gray-text">
-                                <p>Aenean non ex neque. Sed vitae purus in urna volutpat iaculis. Ut congue vel tortor in tincidunt. Maecenas varius pellentesque odio sed facilisis. In ullamcorper augue quis nunc pellentesque faucibus. Proin interdum finibus enim, vel ultrices ipsum vulputate vel.</p>
-                            </div>
-                            <a href="{% url 'blog:single-blog' %}" class="gray-text margin-top-10">
                                 <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
                             </a>
                             <hr>
                         </article>
                     </div>
+                    {% endfor%}
                 </div>
                 <div class="row">
                     <div class="col-lg-12 text-right">
