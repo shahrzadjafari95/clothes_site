@@ -10,10 +10,10 @@ status = [('available', 'available'),
 
 
 class Category(models.Model):
-    category = models.CharField(max_length=255)
+    name_category = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.category
+        return self.name_category
 
 
 class All_Type_Clothes(models.Model):
