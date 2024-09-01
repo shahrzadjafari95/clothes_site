@@ -4,6 +4,10 @@ gender_clothes = [('male', 'male'),
                   ('female', 'female'),
                   ('sport', 'sport')]
 
+status = [('available', 'available'),
+          ('finished', 'finished'),
+          ('under production', 'under production')]
+
 
 class Category(models.Model):
     category = models.CharField(max_length=255)
@@ -18,7 +22,7 @@ class All_Type_Clothes(models.Model):
     content = models.CharField(max_length=255)
     gender = models.CharField(max_length=255, choices=gender_clothes, default='male')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False, null=True)
-    status = models.BooleanField(default=False)
+    status = models.CharField(max_length=20, default='draft',choices=status )
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(null=True)
