@@ -1,7 +1,8 @@
 from django.db import models
 
-gender_clothes = [('men', 'men'),
-                  ('female', 'female')]
+gender_clothes = [('male', 'male'),
+                  ('female', 'female'),
+                  ('sport', 'sport')]
 
 
 class Category(models.Model):

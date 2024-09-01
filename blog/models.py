@@ -2,7 +2,6 @@ from PIL import Image
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
-from django_resized import ResizedImageField
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import sys

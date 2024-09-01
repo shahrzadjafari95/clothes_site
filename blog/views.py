@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
@@ -7,6 +8,14 @@ from .models import Post
 # Create your views here.
 def blog_home(request):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now()).order_by('-published_date')
+    # posts = Paginator(posts, 3)  # posts that filter by above conditions
+    # try:
+    #     page_number = request.GET.get('page')
+    #     posts = posts.get_page(page_number)
+    # except PageNotAnInteger:  # if user enter a string or not int object
+    #     posts = posts.get_page(1)  # return page1
+    # except EmptyPage:
+    #     posts = posts.get_page(1)
     context = {'posts': posts}
     return render(request, 'blog/blog.html', context)
 
