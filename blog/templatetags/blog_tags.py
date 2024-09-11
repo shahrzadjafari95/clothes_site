@@ -19,3 +19,9 @@ def latest_post(arg=3):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now()).order_by('-published_date')[:arg]
     return {'posts': posts}
 
+
+@register.inclusion_tag('blog/popular-post.html')
+def popular_post(arg):
+    posts = Post.objects.filter(status='A', published_date__lte=timezone.now()).order_by('-counted_view')[:arg]
+    return {'posts': posts}
+
