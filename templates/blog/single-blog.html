@@ -34,7 +34,8 @@
                             <div class="post-meta-data">
                                 <p class="gold-text">
                                     <i>
-                                    Posted by: {{post.author.get_full_name}} /
+                                    Posted by: <a class="gold-text" href="{% url 'blog:author' author=post.author %}">
+                                    {{post.author.get_full_name}} </a>/
                                     Categories:
                                     {% for cat in post.category.all %}
                                     {{ cat.name }}
