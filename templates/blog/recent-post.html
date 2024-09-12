@@ -1,17 +1,12 @@
 <div class="aside-block">
-                    <h4 class="text-uppercase"><i>Recent Posts</i></h4>
-                    <hr class="gold-hr">
-                    <article class="aside-post-excerpt">
-                        <h5 class="text-uppercase">Aenean Sollicitudin Lorem</h5>
-                        <p class="gold-text"><i>21 January 2084</i></p>
-                        <p>Integer lorem enim, pretium suscipit lectus vitae, sagittis aliquet urna. Vivamus interdum pellentesque urna, at pharetra felis tincidunt in.</p>
-                        <p><b><i>Author: Admin</i></b></p>
-                    </article>
-                    <hr class="gold-hr">
-                    <article class="aside-post-excerpt">
-                        <h5 class="text-uppercase">Aenean Sollicitudin Lorem</h5>
-                        <p class="gold-text"><i>19 January 2084</i></p>
-                        <p>Integer lorem enim, pretium suscipit lectus vitae, sagittis aliquet urna. Vivamus interdum pellentesque urna, at pharetra felis tincidunt in.</p>
-                        <p><b><i>Author: Admin</i></b></p>
-                    </article>
-                </div> <!-- /.aside-block -->
+    <h4 class="text-uppercase"><i>Recent Posts</i></h4>
+    {% for post in posts %}
+    <hr class="gold-hr">
+    <article class="aside-post-excerpt">
+        <h5 class="text-uppercase"><a href="{% url 'blog:single-blog' pid=post.id%}">{{post.title}}</a></h5>
+        <p class="gold-text"><i>{{post.published_date|date:'d M Y'}}</i></p>
+        <p><b><i>author: {{post.author.get_full_name}}</i></b></p>
+        <p>{{post.content|truncatewords:10}}</p>
+    </article>
+    {% endfor %}
+</div> <!-- /.aside-block -->
