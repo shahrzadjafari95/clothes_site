@@ -41,7 +41,8 @@
                                     {%if not forloop.last%},{%endif%}
                                     {% endfor %} /
                                     Comments: 116 /
-                                    Views: {{post.counted_view}}
+                                    {% count_view post.id %}
+                                    Views: {{ post.counted_view }}
                                     </i>
                                 </p>
                             </div>
