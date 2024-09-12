@@ -47,7 +47,7 @@
                                     {{post.author.get_full_name}} </a>/
                                     Categories:
                                     {% for cat in post.category.all %}
-                                    {{ cat.name }}
+                                    <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
                                     {%if not forloop.last%},{%endif%}
                                     {% endfor %} /
                                     Comments: 116 /
