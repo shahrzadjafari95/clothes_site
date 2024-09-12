@@ -6,8 +6,12 @@ from .models import Post
 
 
 # Create your views here.
-def blog_home(request):
+def blog_home(request, **kwargs):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now()).order_by('-published_date')
+    if kwargs.get('cat_name') is not None:
+        posts = posts.filter(category__name=kwargs['cat_name'])
+    if kwargs.get('author') is not None:
+        posts = posts.filter(author__username=kwargs['author'])
     # posts = Paginator(posts, 3)  # posts that filter by above conditions
     # try:
     #     page_number = request.GET.get('page')
