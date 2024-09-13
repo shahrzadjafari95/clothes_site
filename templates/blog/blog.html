@@ -82,6 +82,8 @@
                                 <li><a href="?page={{i}}">{{i}} <span class="sr-only"></span></a></li>
                                 {% endif %}
                                 {% endfor %}
+                                {% if posts.has_next %}
+                                <li>
                                         <span aria-hidden="true"><i class="fa fa-play"></i></span>
                                     </a>
                                 </li>
