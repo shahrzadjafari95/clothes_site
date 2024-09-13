@@ -12,7 +12,6 @@ def blog_home(request, **kwargs):
         posts = posts.filter(category__name=kwargs['cat_name'])
     if kwargs.get('author') is not None:
         posts = posts.filter(author__username=kwargs['author'])
-    # posts = Paginator(posts, 3)  # posts that filter by above conditions
     # try:
     #     page_number = request.GET.get('page')
     #     posts = posts.get_page(page_number)
@@ -20,6 +19,7 @@ def blog_home(request, **kwargs):
     #     posts = posts.get_page(1)  # return page1
     # except EmptyPage:
     #     posts = posts.get_page(1)
+    posts = Paginator(posts, 3)  # posts that filter by above conditions
     context = {'posts': posts}
     return render(request, 'blog/blog.html', context)
 
