@@ -84,6 +84,7 @@
                                 {% endfor %}
                                 {% if posts.has_next %}
                                 <li>
+                                    <a href="?page={{posts.next_page_number}}" aria-label="Next">
                                         <span aria-hidden="true"><i class="fa fa-play"></i></span>
                                     </a>
                                 </li>
