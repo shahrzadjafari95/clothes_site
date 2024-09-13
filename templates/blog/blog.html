@@ -75,6 +75,9 @@
                                 <a href="?page=1">&laquo; first</a>
                                 </li>
                                 {% endif %}
+                                {% for i in posts.paginator.page_range %}
+                                {% if posts.number == i %}
+                                <li class="active"><a href="?page={{i}}">{{i}} <span class="sr-only">(current)</span></a></li>
                                         <span aria-hidden="true"><i class="fa fa-play"></i></span>
                                     </a>
                                 </li>
