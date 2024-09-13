@@ -70,8 +70,11 @@
                         <div class="pagination-wrap blog-post-pagination">
 
                             <ul class="pagination">
+                                {% if posts.has_previous %}
                                 <li>
-                                    <a href="#" aria-label="Next">
+                                <a href="?page=1">&laquo; first</a>
+                                </li>
+                                {% endif %}
                                         <span aria-hidden="true"><i class="fa fa-play"></i></span>
                                     </a>
                                 </li>
