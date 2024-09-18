@@ -29,6 +29,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    ordering = ['name']
     list_display = ('name', 'id',)
     search_fields = ['name']
 
