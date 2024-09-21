@@ -6,6 +6,7 @@ from blog.models import Post, Category
 
 register = template.Library()
 
+
 @register.inclusion_tag('blog/recent-post.html')
 def latest_post(arg=3):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now()).order_by('-published_date')[:arg]
@@ -21,8 +22,6 @@ def popular_post(arg):
 @register.inclusion_tag('blog/categories.html')
 def categories(status='A'):
     all_categories = Category.objects.annotate(post_count=Count('posts', filter=Q(posts__status=status) &
-                    Q(posts__published_date__lte=timezone.now()))).filter(post_count__gt=0).order_by('-post_count')  # Only show categories with posts
+                                                                                Q(posts__published_date__lte=timezone.now()))).filter(
+        post_count__gt=0).order_by('-post_count')  # Only show categories with posts
     return {'categories': all_categories}
-
-
-
