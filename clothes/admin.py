@@ -17,7 +17,7 @@ class StatusFilter(MultiChoice):
 
 class ContactAdmin(admin.ModelAdmin):
     data_hierarchy = 'created_date'
-    list_display = ['name', 'email', 'created_date']
+    list_display = ['email', 'created_date']
     list_filter = [('created_date', DateRangeFilter)]
     search_fields = ('name', 'email')
     ordering = ['-created_date']
