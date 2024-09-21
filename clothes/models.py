@@ -33,6 +33,7 @@ class All_Type_Clothes(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255, default=None)
     email = models.EmailField()
     subject = models.CharField(max_length=255, blank=True, null=True)
     message = models.TextField()
