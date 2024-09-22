@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from clothes.forms import ContactForm
 
 
 # Create your views here.
