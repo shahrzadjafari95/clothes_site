@@ -9,7 +9,6 @@ def index(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -17,6 +16,9 @@ def contact(request):
             messages.add_message(request, messages.SUCCESS, 'Your ticket submitted successfully')
         else:
             messages.add_message(request, messages.ERROR, "Your ticket didn't submit ")
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'contact.html', context)
 
 
 def men(request):
