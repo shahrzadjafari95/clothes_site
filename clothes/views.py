@@ -9,6 +9,8 @@ def index(request):
 
 def contact(request):
     return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
 
 
 def men(request):
