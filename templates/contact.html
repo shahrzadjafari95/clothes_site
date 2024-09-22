@@ -2,6 +2,24 @@
 {% load static %}
 {% block content %}
 
+
+    <!-- Enhanced Popup Modal -->
+    <div id="message-popup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message-content"></p>
+        </div>
+    </div>
+
+    <!-- Hidden Div for Django Messages -->
+    <div id="popup-messages" style="display: none;">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="{{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
         <section class="templatemo-container padding-0">
             
                 <div class="templatemo-block-left contact">
