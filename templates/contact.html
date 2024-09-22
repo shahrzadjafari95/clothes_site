@@ -21,14 +21,13 @@
     </div>
 
         <section class="templatemo-container padding-0">
-            
                 <div class="templatemo-block-left contact">
                     <div class="templatemo-contact-info">
                         <h2 class="text-uppercase">Contact</h2>
                     <hr class="templatemo-section-header-hr w-120">
                     <p class="text-uppercase templatemo-section-subheader">Information</p>
                     <p class="margin-bottom-20">Aenean non ex neque. Sed vitae purus in urna volutpat iaculis. Ut congue vel tortor in tincidunt. Maecenas varius pellentesque.</p>
-                    <form action="#" method="post" class="tm-contact-form">
+                    <form action="{% url 'clothes:contact' %}" method="post" class="tm-contact-form">
                         <div class="tm-contact-form">
                             <div class="form-group">
                                 <input type="text" id="contact_name" class="form-control" placeholder="Name..." />
