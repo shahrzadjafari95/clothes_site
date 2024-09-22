@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from clothes.forms import ContactForm
 
@@ -14,6 +15,8 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Your ticket submitted successfully')
+        else:
+            messages.add_message(request, messages.ERROR, "Your ticket didn't submit ")
 
 
 def men(request):
