@@ -33,7 +33,7 @@ class All_Type_Clothes_Admin(admin.ModelAdmin):
 
     search_fields = ('gender',)
     empty_value_display = '-empty-'
-    ordering = ['-created_date']
+    ordering = ['-created_date']  # order based on last item that created
 
 
 class Category_Admin(admin.ModelAdmin):
