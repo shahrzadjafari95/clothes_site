@@ -34,6 +34,7 @@ class All_Type_Clothes_Admin(admin.ModelAdmin):
     search_fields = ('gender',)
     empty_value_display = '-empty-'
     ordering = ['-created_date']  # order based on last item that created
+    list_per_page = 10  # display 10 item per page
 
 
 class Category_Admin(admin.ModelAdmin):
