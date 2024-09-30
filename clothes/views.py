@@ -50,3 +50,6 @@ def women(request, **kwargs):
     if kwargs.get('cat_name') is not None:
         products = products.filter(category__name_category=kwargs['cat_name'])
     products = Paginator(products, 9)  # Show 9 products per page
+    try:
+        # Get the page number from the request's GET parameters
+        page_number = request.GET.get('page')
