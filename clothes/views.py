@@ -45,3 +45,5 @@ def men(request, **kwargs):
     return render(request, 'women.html')
 def women(request, **kwargs):
     all_categories = Category.objects.all()
+    products = All_Type_Clothes.objects.filter(status='available', gender__in=('female', 'sport'),
+                                               published_date__lte=timezone.now())
