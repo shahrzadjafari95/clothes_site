@@ -21,8 +21,9 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
-def men(request):
     return render(request, 'men.html')
+def men(request, **kwargs):
+    all_categories = Category.objects.all()
 
 
 def women(request):
