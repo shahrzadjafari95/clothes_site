@@ -16,6 +16,9 @@
                             {% endfor %}
                             {% if products.has_next %}
                             <li>
+                                <a href="?page={{products.next_page_number}}" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fa fa-play"></i></span>
+                                </a>
                             {% endif %}
                         </ul>
                     </div>
