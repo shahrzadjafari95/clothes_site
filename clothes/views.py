@@ -42,5 +42,5 @@ def men(request, **kwargs):
     return render(request, 'men.html', context)
 
 
-def women(request):
     return render(request, 'women.html')
+def women(request, **kwargs):
