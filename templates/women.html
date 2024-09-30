@@ -17,6 +17,7 @@
                 </div>
             </div>
             <div class="row">
+                {% for product in products %}
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10 text-center">
                     <div class="product-type-container">
                         <div class="product-type-overlay">
@@ -31,6 +32,7 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </section> <!-- end "Men Collections" -->
 {% endblock %}
