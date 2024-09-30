@@ -3,6 +3,10 @@
                     <div class="pagination-wrap">
                         <ul class="pagination">
                             {% if products.has_previous %}
+                            <li>
+                                <a href="?page=1">&laquo; first</a>
+                            </li>
+                            {% endif %}
                             {% endif %}
                         </ul>
                     </div>
