@@ -34,6 +34,8 @@ def men(request, **kwargs):
         # Get the page number from the request's GET parameters
         page_number = request.GET.get('page')
         products = products.get_page(page_number)
+    except PageNotAnInteger:  # if user enter a string or not int object
+        products = products.get_page(1)  # return page1
 
 
 def women(request):
