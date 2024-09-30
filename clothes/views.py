@@ -49,3 +49,4 @@ def women(request, **kwargs):
                                                published_date__lte=timezone.now())
     if kwargs.get('cat_name') is not None:
         products = products.filter(category__name_category=kwargs['cat_name'])
+    products = Paginator(products, 9)  # Show 9 products per page
