@@ -21,7 +21,6 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
-    return render(request, 'men.html')
 def men(request, **kwargs):
     all_categories = Category.objects.all()
     products = All_Type_Clothes.objects.filter(status='available',
@@ -38,6 +37,8 @@ def men(request, **kwargs):
         products = products.get_page(1)  # return page1
     except EmptyPage:
         products = products.get_page(1)
+    context = {'products': products, 'categories': all_categories}
+    return render(request, 'men.html', context)
 
 
 def women(request):
