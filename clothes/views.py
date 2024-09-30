@@ -43,7 +43,6 @@ def men(request, **kwargs):
     return render(request, 'men.html', context)
 
 
-    return render(request, 'women.html')
 def women(request, **kwargs):
     all_categories = Category.objects.all()
     products = All_Type_Clothes.objects.filter(status='available', gender__in=('female', 'sport'),
@@ -59,3 +58,5 @@ def women(request, **kwargs):
         products = products.get_page(1)  # return page1
     except EmptyPage:
         products = products.get_page(1)
+    context = {'products': products, 'categories': all_categories}
+    return render(request, 'women.html', context)
