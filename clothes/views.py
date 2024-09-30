@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 from clothes.forms import ContactForm
+from clothes.models import All_Type_Clothes, Category
 
 
 # Create your views here.
