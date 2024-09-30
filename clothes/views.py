@@ -29,6 +29,7 @@ def men(request, **kwargs):
     # Filter products by the category name passed in the URL
     if kwargs.get('cat_name') is not None:
         products = products.filter(category__name_category=kwargs['cat_name'])
+    products = Paginator(products, 9)  # Show 9 products per page
 
 
 def women(request):
