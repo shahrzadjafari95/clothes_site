@@ -19,6 +19,7 @@ class Category(models.Model):
 class All_Type_Clothes(models.Model):
     price = models.FloatField()
     image = models.ImageField(upload_to='clothes/')
+    title = models.CharField(max_length=255)
     content = models.CharField(max_length=255)
     gender = models.CharField(max_length=255, choices=gender_clothes, default='male')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False, null=True)
