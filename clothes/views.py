@@ -47,3 +47,5 @@ def women(request, **kwargs):
     all_categories = Category.objects.all()
     products = All_Type_Clothes.objects.filter(status='available', gender__in=('female', 'sport'),
                                                published_date__lte=timezone.now())
+    if kwargs.get('cat_name') is not None:
+        products = products.filter(category__name_category=kwargs['cat_name'])
