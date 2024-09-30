@@ -19,6 +19,10 @@
                                 <a href="?page={{products.next_page_number}}" aria-label="Next">
                                     <span aria-hidden="true"><i class="fa fa-play"></i></span>
                                 </a>
+                            </li>
+                            <li>
+                                <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+                            </li>
                             {% endif %}
                         </ul>
                     </div>
