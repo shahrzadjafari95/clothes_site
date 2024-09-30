@@ -7,6 +7,8 @@
                                 <a href="?page=1">&laquo; first</a>
                             </li>
                             {% endif %}
+                            {% for i in products.paginator.page_range %}
+                            {% endfor %}
                             {% endif %}
                         </ul>
                     </div>
