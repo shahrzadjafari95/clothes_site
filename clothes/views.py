@@ -53,3 +53,4 @@ def women(request, **kwargs):
     try:
         # Get the page number from the request's GET parameters
         page_number = request.GET.get('page')
+        products = products.get_page(page_number)
