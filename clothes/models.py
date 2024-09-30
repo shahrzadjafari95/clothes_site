@@ -17,13 +17,13 @@ class Category(models.Model):
 
 
 class All_Type_Clothes(models.Model):
-    price = models.FloatField()
     image = models.ImageField(upload_to='clothes/')
     title = models.CharField(max_length=255)
     content = models.CharField(max_length=255)
+    price = models.FloatField()
     gender = models.CharField(max_length=255, choices=gender_clothes, default='male')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False, null=True)
-    status = models.CharField(max_length=20, default='draft',choices=status )
+    status = models.CharField(max_length=20, default='draft', choices=status)
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(null=True)
