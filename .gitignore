@@ -167,4 +167,5 @@ media/
 static/
 blog/migrations
 clothes/migrations
+statics/
 
