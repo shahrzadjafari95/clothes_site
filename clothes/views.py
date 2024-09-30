@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 from clothes.forms import ContactForm
 from clothes.models import All_Type_Clothes, Category
@@ -56,3 +57,5 @@ def women(request, **kwargs):
         products = products.get_page(page_number)
     except PageNotAnInteger:  # if user enter a string or not int object
         products = products.get_page(1)  # return page1
+    except EmptyPage:
+        products = products.get_page(1)
