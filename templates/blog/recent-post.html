@@ -5,7 +5,7 @@
     <hr class="gold-hr">
     <article class="aside-post-excerpt">
         <h5 class="text-uppercase"><a href="{% url 'blog:single-blog' pid=post.id%}">{{post.title}}</a></h5>
-        <p class="gold-text"><i>{{post.published_date|date:'d M Y'}}</i></p>
+        <p class="gold-text"><i>{{post.published_date|date:'d M Y'}} ({{post.published_date|naturaltime}})</i></p>
         <p><b><i>author: {{post.author.get_full_name}}</i></b></p>
         <p>{{post.content|truncatewords:10}}</p>
     </article>
