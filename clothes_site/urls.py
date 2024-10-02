@@ -21,6 +21,8 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 
 from blog.sitemaps import BlogSitemap
+from clothes.sitemaps import StaticViewSitemap
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('clothes.urls')),
