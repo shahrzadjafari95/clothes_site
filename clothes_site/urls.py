@@ -23,6 +23,11 @@ from django.urls import path, include
 from blog.sitemaps import BlogSitemap
 from clothes.sitemaps import StaticViewSitemap
 
+sitemaps = {
+    "static": StaticViewSitemap,
+    "blog": BlogSitemap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('clothes.urls')),
