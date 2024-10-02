@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django_extensions',
+    'django.contrib.sites',
     'clothes',
     'blog',
     'rangefilter',
