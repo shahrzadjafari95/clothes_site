@@ -54,6 +54,8 @@ SITE_ID = 2
 
 # robots
 ROBOTS_USE_SITEMAP = True
+ROBOTS_USE_HOST = True
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
