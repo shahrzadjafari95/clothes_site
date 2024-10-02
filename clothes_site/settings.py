@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django_admin_listfilter_dropdown',
 
 ]
+# sitemap
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
