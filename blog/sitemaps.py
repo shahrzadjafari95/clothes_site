@@ -3,3 +3,4 @@ from blog.models import Post
 
 
 class BlogSitemap(Sitemap):
+    changefreq = "weekly"
