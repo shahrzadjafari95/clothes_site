@@ -4,6 +4,11 @@ django-admin-autocomplete-filter==0.7.1
 django-admin-list-filter-dropdown==1.0.3
 django-admin-list-filters==1.2
 django-admin-rangefilter==0.13.1
+django-appconf==1.0.6
+django-extensions==3.2.3
+django-imagekit==5.0.0
 django-resized==1.0.2
+django-robots==6.1
+pilkit==3.0
 pillow==10.4.0
 sqlparse==0.5.1
