@@ -115,6 +115,9 @@
                         <div class="media-body">
                             <h5 class="mt-0">{{ comment.name }}</h5>
                             <p class="comment-date"><i>{{ comment.created_date|date:"F j, Y, g:i a" }}</i></p>
+                            <p>{{ comment.message }}</p>
+                        </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
