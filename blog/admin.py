@@ -3,6 +3,7 @@ from blog.models import Post, Category
 from rangefilter.filters import DateRangeFilter
 from django_admin_filters import MultiChoice
 from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
+from django_summernote.admin import SummernoteModelAdmin
 
 
 # Register your models here.
