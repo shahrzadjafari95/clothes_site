@@ -20,6 +20,7 @@ class PostAdmin(SummernoteModelAdmin):
                    ('published_date', DateRangeFilter),
                    ('category', RelatedDropdownFilter))
     search_fields = ['title', 'content', 'category']
+    summernote_fields = ('content',)
 
     # To display many-to-many fields in the Django Admin list view, we need to define a custom method in the model admin
     # class and use it in the list_display attribute.
