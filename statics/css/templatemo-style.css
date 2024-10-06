@@ -516,8 +516,8 @@ hr.gold-hr { border-color: #D0AF51; }
 .form-control,
 .btn { border-radius: 0; }
 .form-control {
-	background: #000;
-	color: #DDD;
+	background: #eadddd;
+	color: #170101;
 }
 .margin-bottom-20 { margin-bottom: 20px; }
 .padding-0 { padding: 0; }
