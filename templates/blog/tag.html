@@ -2,5 +2,7 @@
     <h4 class="text-uppercase"><i>Tags</i></h4>
     <hr class="gold-hr">
     <ul class="tag-list">
+        {% for tag in post.tag.all %}
+        {% endfor %}
     </ul>
 </div> <!-- /.aside-block -->
