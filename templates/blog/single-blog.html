@@ -114,6 +114,7 @@
                     <div class="media comment-box mb-4">
                         <div class="media-body">
                             <h5 class="mt-0">{{ comment.name }}</h5>
+                            <p class="comment-date"><i>{{ comment.created_date|date:"F j, Y, g:i a" }}</i></p>
                     {% endfor %}
                 </div>
             </div>
