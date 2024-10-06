@@ -29,6 +29,7 @@ def blog_home(request, **kwargs):
 def single_blog(request, pid):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now())
     post = get_object_or_404(posts, pk=pid)
+    comments = Comment.objects.filter(approved=True, post=post.id)
     post.counted_view += 1
     post.save()
     contex = {'post': post,
