@@ -1,7 +1,7 @@
 from django import template
 from django.db.models import Count, Q
 from django.utils import timezone
-from blog.models import Post, Category
+from blog.models import Post, Category, Comment
 
 register = template.Library()
 
