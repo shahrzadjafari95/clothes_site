@@ -68,3 +68,5 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        ordering = ['-created_date']
+
