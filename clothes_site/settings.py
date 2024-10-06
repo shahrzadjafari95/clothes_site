@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
 # captcha setting, this used in admin panel
 # MULTI_CAPTCHA_ADMIN = {
+#     'engine': 'simple-captcha',
 # }
 
 SITE_ID = 2
