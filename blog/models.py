@@ -27,6 +27,7 @@ class Post(models.Model):
     content = models.TextField()
     img = models.ImageField(upload_to='blog/', default='blog/default.jpg')
     category = models.ManyToManyField(Category, related_name='posts')
+    tag = TaggableManager()
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     counted_view = models.IntegerField(default=0)
     status = models.CharField(max_length=1, default='P', choices=STATUS_CHOICES)
