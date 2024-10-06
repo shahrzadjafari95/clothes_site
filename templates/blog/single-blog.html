@@ -3,29 +3,6 @@
 {% load blog_tags %}
 {% block content %}
 
-              <section class="col-lg-8 col-md-8">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <article class="templatemo-blog-post">
-                            <div class="post-img-container">
-                                <img src="{{post.img.url}}" alt="Post 1" class="post-img img-responsive">
-                                <div class="templatemo-post-social">
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-heart fa-2x red-bg"></i>
-                                    </div>
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-comments-o fa-2x gold-bg"></i>
-                                    </div>
-                                </div>
-                                <div class="templatemo-post-date gold-text">
-                                    <div>
-                                        <div class="text-center date">{{post.published_date|date:"d "}}</div>
-                                        <div class="text-center">{{post.published_date|date:"M Y"}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <h3 class="text-uppercase">{{post.title}}</h3>
 <!-- "Latest News" -->
 <div class="container">
     <div class="row">
@@ -46,36 +23,50 @@
             {% endif %}
         </div>
         <!-- Main content -->
+      <section class="col-lg-8 col-md-8">
+        <div class="row">
+            <div class="col-lg-12">
+                <article class="templatemo-blog-post">
+                    <div class="post-img-container">
+                        <img src="{{post.img.url}}" alt="Post 1" class="post-img img-responsive">
+                        <div class="templatemo-post-social">
+                            <div class="flex-center margin-top-10">
+                                <i class="fa fa-heart fa-2x red-bg"></i>
                             </div>
-                            <div class="post-meta-data">
-                                <p class="gold-text">
-                                    <i>
-                                    Posted by: <a class="gold-text" href="{% url 'blog:author' author=post.author %}">
-                                    {{post.author.get_full_name}} </a>/
-                                    Categories:
-                                    {% for cat in post.category.all %}
-                                    <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
-                                    {%if not forloop.last%},{%endif%}
-                                    {% endfor %} /
-                                    Comments: 116 /
-                                    Views: {{ post.counted_view }}
-                                    </i>
-                                </p>
+                            <div class="flex-center margin-top-10">
+                                <i class="fa fa-comments-o fa-2x gold-bg"></i>
                             </div>
-                            <div class="post-excerpt gray-text">
-                                <p>{{post.content}}</p>
+                        </div>
+                        <div class="templatemo-post-date gold-text">
+                            <div>
+                                <div class="text-center date">{{post.published_date|date:"d "}}</div>
+                                <div class="text-center">{{post.published_date|date:"M Y"}}</div>
                             </div>
-
-                        </article>
+                        </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 text-right">
-
+                    <div class="post-title">
+                        <h3 class="text-uppercase">{{post.title}}</h3>
                     </div>
-                </div>
-            </section> <!-- end "Latest News" -->
+                    <div class="post-meta-data">
+                        <p class="gold-text">
+                            <i>
+                            Posted by: <a class="gold-text" href="{% url 'blog:author' author=post.author %}">
+                            {{post.author.get_full_name}} </a>/
+                            Categories:
+                            {% for cat in post.category.all %}
+                            <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
+                            {%if not forloop.last%},{%endif%}
+                            {% endfor %} /
+                            Views: {{ post.counted_view }}
+                            </i>
+                        </p>
+                    </div>
+                    <div class="post-excerpt gray-text">
+                        <p>{{post.content}}</p>
+                    </div>
+                </article>
+            </div>
+        </div>
 
 
 
