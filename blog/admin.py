@@ -39,5 +39,6 @@ class CategoryAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('email', 'approved', 'created_date')
     list_filter = ['approved']
+    date_hierarchy = 'created_date'
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
