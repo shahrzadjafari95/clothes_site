@@ -57,6 +57,9 @@ SITE_ID = 2
 ROBOTS_USE_SITEMAP = True
 ROBOTS_USE_HOST = True
 
+# summernote config
+SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
