@@ -60,6 +60,10 @@ ROBOTS_USE_HOST = True
 # summernote config
 SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
 
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
