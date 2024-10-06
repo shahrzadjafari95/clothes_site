@@ -37,5 +37,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
+    list_display = ('email', 'approved', 'created_date')
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
