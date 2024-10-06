@@ -27,3 +27,5 @@ def categories(status='A'):
 
 
 @register.simple_tag(name='comment_count')
+def function(pid):
+    return Comment.objects.filter(post=pid, approved=True).count()
