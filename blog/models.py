@@ -43,7 +43,7 @@ class Post(models.Model):
         output.seek(0)
         # change the imagefield value to be the newly modified image value
         self.img = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.img.name.split('.')[0], 'image/jpeg',
-                                          sys.getsizeof(output), None)
+                                        sys.getsizeof(output), None)
 
         super(Post, self).save()
 
