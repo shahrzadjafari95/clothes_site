@@ -32,6 +32,7 @@ def single_blog(request, pid):
     comments = Comment.objects.filter(approved=True, post=post.id)
     if request.method == "POST":
         form = CommentForm(request.POST)
+        if form.is_valid():
     post.counted_view += 1
     post.save()
     contex = {'post': post,
