@@ -53,16 +53,16 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'taggit',
 ]
-# sitemap
 
 # captcha setting, this used in admin panel
 # MULTI_CAPTCHA_ADMIN = {
 #     'engine': 'simple-captcha',
 # }
 
+# sitemap setting
 SITE_ID = 2
 
-# robots
+# robots setting
 ROBOTS_USE_SITEMAP = True
 ROBOTS_USE_HOST = True
 
