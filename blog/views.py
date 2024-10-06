@@ -48,6 +48,8 @@ def single_blog(request, pid):
               'form': form,
               # filter posts according published_date that great than current post published_date
               'next': posts.filter(published_date__gt=post.published_date).order_by('published_date').first(),
-              'previous': posts.filter(published_date__lt=post.published_date).order_by('-published_date').first()}
+              'previous': posts.filter(published_date__lt=post.published_date).order_by('-published_date').first(),
+              'comments': comments
+              }
 
     return render(request, 'blog/single-blog.html', contex)
