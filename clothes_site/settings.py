@@ -80,6 +80,7 @@ SUMMERNOTE_CONFIG = {
             ['font', ['bold', 'underline', 'clear']],
             ['fontname', ['fontname']],
             ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
