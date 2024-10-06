@@ -35,6 +35,7 @@ def single_blog(request, pid):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
+            comment.save()
     post.counted_view += 1
     post.save()
     contex = {'post': post,
