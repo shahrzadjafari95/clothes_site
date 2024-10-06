@@ -53,6 +53,11 @@ INSTALLED_APPS = [
 
 ]
 # sitemap
+
+# captcha setting, this used in admin panel
+# MULTI_CAPTCHA_ADMIN = {
+# }
+
 SITE_ID = 2
 
 # robots
