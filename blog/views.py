@@ -39,6 +39,8 @@ def single_blog(request, pid):
             comment.save()
             messages.success(request, 'Your comment has been posted successfully.'
                                       'After checking, it will be displayed on the screen.')
+        else:
+            messages.error(request, 'There was an error with your comment.')
     post.counted_view += 1
     post.save()
     contex = {'post': post,
