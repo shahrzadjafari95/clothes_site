@@ -67,3 +67,4 @@ class Comment(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
 
+    class Meta:
