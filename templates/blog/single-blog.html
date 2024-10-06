@@ -126,7 +126,40 @@
             {% include 'blog/pre-next-post.html' %}
             {% include 'blog/tag.html' %}
         </aside>
+        <script>
+        window.onload = function() {
+            var popupMessages = document.getElementById("popup-messages");
+            if (popupMessages.innerHTML.trim() !== "") {
+                var modal = document.getElementById("message-popup");
+                var modalMessageContent = document.getElementById("modal-message-content");
 
+                // Retrieve the messages from the hidden div
+                modalMessageContent.innerHTML = popupMessages.innerHTML;
 
-        </div>
+                // Show the modal with fade-in effect
+                modal.style.display = "flex";
+                modal.classList.add("fade-in");
+
+                // Close the modal when the user clicks the close button
+                document.querySelector(".close").onclick = function() {
+                    modal.classList.add("fade-out");
+                    setTimeout(function() {
+                        modal.style.display = "none";
+                        modal.classList.remove("fade-out");
+                    }, 500);  // Time for fade-out animation
+                };
+
+                // Automatically close the modal after 3 second
+                setTimeout(function() {
+                    modal.classList.add("fade-out");
+                    setTimeout(function() {
+                        modal.style.display = "none";
+                        modal.classList.remove("fade-out");
+                    }, 500);  // Time for fade-out animation
+                }, 3000);  // 3000ms = 3 second
+            }
+        };
+    </script>
+    </div>
+</div>
 {% endblock %}
