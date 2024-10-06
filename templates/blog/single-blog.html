@@ -75,6 +75,7 @@
                     <hr class="gold-hr">
                     <!-- Comment Form -->
                     <form action="{% url 'blog:single-blog' pid=post.id %}" method="post" class="comment-form">
+                        {% csrf_token %}
 
 
 
