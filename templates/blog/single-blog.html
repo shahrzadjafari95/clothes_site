@@ -118,6 +118,8 @@
                             <p>{{ comment.message }}</p>
                         </div>
                     </div>
+                    {% empty %}
+                    <p>No comments yet. Be the first to comment!</p>
                     {% endfor %}
                 </div>
             </div>
