@@ -69,6 +69,10 @@ SUMMERNOTE_CONFIG = {
         # As an example, using Summernote Air-mode
         'airMode': False,
 
+        # Change editor size
+        'width': '700',
+        'height': '480',
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
