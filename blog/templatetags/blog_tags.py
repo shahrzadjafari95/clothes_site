@@ -24,3 +24,6 @@ def categories(status='A'):
                                                                                 Q(posts__published_date__lte=timezone.now()))).filter(
         post_count__gt=0).order_by('-post_count')  # Only show categories with posts
     return {'categories': all_categories}
+
+
+@register.simple_tag(name='comment_count')
