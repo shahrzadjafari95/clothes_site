@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post, Category
+from blog.models import Post, Category, Comment
 from rangefilter.filters import DateRangeFilter
 from django_admin_filters import MultiChoice
 from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
