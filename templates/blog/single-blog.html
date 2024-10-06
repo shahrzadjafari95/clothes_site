@@ -104,12 +104,6 @@
                     <h4 class="text-uppercase">Comments</h4>
                     <hr class="gold-hr">
 
-            <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
-                {% categories %}
-                {% popular_post 3 %}
-                {% include 'blog/pre-next-post.html' %}
-                {% include 'blog/tag.html' %}
-            </aside>
                     {% for comment in comments %}
                     <div class="media comment-box mb-4">
                         <div class="media-body">
@@ -123,6 +117,15 @@
                     {% endfor %}
                 </div>
             </div>
+        </div>
+      </section>
+        <!-- end "Latest News" -->
+        <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
+            {% categories %}
+            {% popular_post 3 %}
+            {% include 'blog/pre-next-post.html' %}
+            {% include 'blog/tag.html' %}
+        </aside>
 
 
         </div>
