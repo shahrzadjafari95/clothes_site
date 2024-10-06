@@ -50,7 +50,7 @@
                                     <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
                                     {%if not forloop.last%},{%endif%}
                                     {% endfor %} /
-                                    Comments: 116 /
+                                    Comments: {% comment_count pid=post.id %} /
                                     Views: {{post.counted_view}}</i>
                                 </p>
                             </div>
