@@ -56,3 +56,6 @@ class Post(models.Model):
     # define an url for post based on id
     def get_absolute_url(self):
         return reverse('blog:single-blog', kwargs={'pid': self.pk})
+
+
+class Comment(models.Model):
