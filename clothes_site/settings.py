@@ -50,8 +50,8 @@ INSTALLED_APPS = [
     'rangefilter',
     'django_admin_filters',
     'django_admin_listfilter_dropdown',
-
     'debug_toolbar',
+    'taggit',
 ]
 # sitemap
 
