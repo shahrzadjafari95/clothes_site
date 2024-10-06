@@ -3,6 +3,7 @@
     <hr class="gold-hr">
     <ul class="tag-list">
         {% for tag in post.tag.all %}
+        <li><a href="{% url 'blog:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
         {% endfor %}
     </ul>
 </div> <!-- /.aside-block -->
