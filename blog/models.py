@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from taggit.managers import TaggableManager
 import sys
 
 # Create your models here.
