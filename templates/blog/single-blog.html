@@ -77,6 +77,11 @@
                     <form action="{% url 'blog:single-blog' pid=post.id %}" method="post" class="comment-form">
                         {% csrf_token %}
 
+                        <div class="form-group">
+                            <label for="name" class="text-uppercase">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
 
 
 
