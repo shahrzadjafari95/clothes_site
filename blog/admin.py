@@ -12,7 +12,7 @@ class StatusFilter(MultiChoice):
     FILTER_LABEL = "By status"
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
     date_hierarchy = 'created_date'
     empty_value_display = '-empty-'
     list_display = ('title', 'id', 'status', 'get_category', 'author', 'counted_view', 'published_date')
