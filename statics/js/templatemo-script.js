@@ -57,3 +57,24 @@ $(document).ready(function(){
   $('body').bind('touchstart', function() {});
 
 });
+
+$(document).ready(function () {
+    // Add refresh button after the captcha image
+    $('img.captcha').after(
+        $('<a href="#void" class="captcha-refresh" style="font-size: 20px; margin-left: 10px; margin-right: 10px"><i class="fa fa-refresh"></i></a>')
+    );
+
+    // Click-handler for the refresh link
+    $('.captcha-refresh').click(function () {
+        var $form = $(this).parents('form');
+        var url = location.protocol + "//" + window.location.hostname + ":" + location.port + "/captcha/refresh/";
+
+        // Make the AJAX call
+        $.getJSON(url, {}, function (json) {
+            $form.find('input[name="captcha_0"]').val(json.key);
+            $form.find('img.captcha').attr('src', json.image_url);
+        });
+
+        return false;
+    });
+});
