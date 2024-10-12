@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'robots',
     'clothes',
     'blog',
+    'accounts',
     'rangefilter',
     'django_admin_filters',
     'django_admin_listfilter_dropdown',
