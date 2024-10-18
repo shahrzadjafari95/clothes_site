@@ -37,7 +37,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('email', 'approved', 'created_date')
+    list_display = ('name', 'email', 'approved', 'created_date')
     list_filter = ['approved']
     date_hierarchy = 'created_date'
     empty_value_display = '-empty-'
