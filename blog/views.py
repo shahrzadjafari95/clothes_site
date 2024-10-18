@@ -30,7 +30,6 @@ def blog_home(request, **kwargs):
 def single_blog(request, pid):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now())
     post = get_object_or_404(posts, pk=pid)
-    comments = Comment.objects.filter(approved=True, post=post.id)
 
     # Capture the full URL of the current page to use as the 'next' URL
     next_url = request.build_absolute_uri()
@@ -52,6 +51,8 @@ def single_blog(request, pid):
                              'on the screen.')
         else:
             messages.error(request, 'There was an error with your comment.')
+
+    comments = Comment.objects.filter(approved=True, post=post.id).order_by('-created_date')
     form = CommentForm()
     post.counted_view += 1
     post.save()
