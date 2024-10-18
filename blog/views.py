@@ -40,13 +40,16 @@ def single_blog(request, pid):
         if not request.user.is_authenticated:
             return redirect(f'/accounts/login/?next={next_url}')
 
+    # Continue processing for posts that don't require login or after login is successful
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.save()
-            messages.success(request, 'Your comment has been posted successfully.'
-                                      'After checking, it will be displayed on the screen.')
+            comment = form.save(commit=False)  # Save the comment but don't commit to the database yet
+            comment.post = post  # Set the post for the comment
+            comment.save()  # Now save the comment to the database
+            messages.success(request,
+                             'Your comment has been posted successfully. After checking, it will be displayed '
+                             'on the screen.')
         else:
             messages.error(request, 'There was an error with your comment.')
     form = CommentForm()
