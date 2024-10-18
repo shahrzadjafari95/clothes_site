@@ -31,11 +31,14 @@ def single_blog(request, pid):
     posts = Post.objects.filter(status='A', published_date__lte=timezone.now())
     post = get_object_or_404(posts, pk=pid)
     comments = Comment.objects.filter(approved=True, post=post.id)
+
+    # Capture the full URL of the current page to use as the 'next' URL
+    next_url = request.build_absolute_uri()
+
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.post = post
             comment.save()
             messages.success(request, 'Your comment has been posted successfully.'
                                       'After checking, it will be displayed on the screen.')
