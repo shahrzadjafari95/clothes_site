@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .forms import CommentForm
 from .models import Post, Comment
@@ -37,6 +37,9 @@ def single_blog(request, pid):
 
     if post.login_required:
         # If login is required and the user is not authenticated, redirect to the login page with the 'next' URL
+        if not request.user.is_authenticated:
+            return redirect(f'/accounts/login/?next={next_url}')
+
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
