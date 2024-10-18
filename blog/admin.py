@@ -15,7 +15,7 @@ class StatusFilter(MultiChoice):
 class PostAdmin(SummernoteModelAdmin):
     date_hierarchy = 'created_date'
     empty_value_display = '-empty-'
-    list_display = ('title', 'id', 'status', 'get_category', 'author', 'counted_view', 'published_date')
+    list_display = ('title', 'id', 'status', 'get_category', 'author', 'login_required', 'counted_view', 'published_date')
     list_filter = (('status', StatusFilter),
                    ('published_date', DateRangeFilter),
                    ('category', RelatedDropdownFilter))
