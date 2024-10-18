@@ -35,6 +35,8 @@ def single_blog(request, pid):
     # Capture the full URL of the current page to use as the 'next' URL
     next_url = request.build_absolute_uri()
 
+    if post.login_required:
+        # If login is required and the user is not authenticated, redirect to the login page with the 'next' URL
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
