@@ -5,3 +5,7 @@ from django.shortcuts import render
 
 
 def login_view(request):
+    # Redirect authenticated users to the home page
+    if request.user.is_authenticated:
+        return redirect('/')
+
