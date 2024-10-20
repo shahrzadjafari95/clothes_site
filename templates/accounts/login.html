@@ -37,6 +37,29 @@
                   <!-- Hidden input field to capture and pass the 'next' URL -->
                   <input type="hidden" name="next" value="{{ next|default:'' }}">
 
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <!-- Username input -->
+                  <div class="form-outline mb-4">
+                    <input type="text" name="username" id="real_username" class="form-control form-control-lg" placeholder="Email or Username" required/>
+                    <label class="form-label" for="real_username">Username</label>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="real_password" class="form-control form-control-lg" placeholder="Enter password" required/>
+                    <label class="form-label" for="real_password">Password</label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                  </div>
+
+                  <a href="#" class="small text-muted">Terms of use.</a>
+                  <a href="#" class="small text-muted">Privacy policy</a>
+                </form>
+
               </div>
             </div>
           </div>
