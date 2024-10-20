@@ -30,6 +30,10 @@
                   {% csrf_token %}
                   {{ form.non_field_errors }}
 
+                  <!-- Honeypot fields to prevent autofill -->
+                  <input type="text" style="display:none;">
+                  <input type="password" style="display:none;">
+
               </div>
             </div>
           </div>
