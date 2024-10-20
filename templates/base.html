@@ -41,6 +41,9 @@
                     <div class="templatemo-header-left-overlay"></div>
                     <div class="templatemo-social templatemo-gray-bg">
                         <ul>
+                            <!-- Add Login and Signup links here -->
+                            {% if request.user.is_authenticated %}
+                            <li><a>Logged in as {{request.user.username}}</a></li>
                         </ul>
                     </div>
                 </div>
