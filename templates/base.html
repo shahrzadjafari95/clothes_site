@@ -47,6 +47,8 @@
                             <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                             {% else %}
                             <li><a href="{% url 'accounts:login' %}?next={{ request.path }}" class="login-link"><i class="fa fa-sign-in"></i> Login</a></li>
+                            <li><a href="{% url 'accounts:register' %}" class="signup-link"><i class="fa fa-user-plus"></i> Signup</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
