@@ -9,3 +9,4 @@ class EmailOrUsernameModelBackend(ModelBackend):
     Custom authentication backend to allow users to authenticate using either their email or username.
     """
 
+    def authenticate(self, request, username=None, password=None, **kwargs):
