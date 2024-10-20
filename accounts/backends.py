@@ -13,3 +13,6 @@ class EmailOrUsernameModelBackend(ModelBackend):
         if username is None or password is None:
             return None
 
+        try:
+            # Try to get the user by email first
+            user = User.objects.get(email=username)
