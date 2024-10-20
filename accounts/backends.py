@@ -20,3 +20,6 @@ class EmailOrUsernameModelBackend(ModelBackend):
             try:
                 # If not an email, try to get the user by username
                 user = User.objects.get(username=username)
+            except User.DoesNotExist:
+                return None
+
