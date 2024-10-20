@@ -32,3 +32,6 @@ def login_view(request):
                 else:
                     return redirect('/')
 
+    else:
+        form = AuthenticationForm()
+
