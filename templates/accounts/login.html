@@ -28,6 +28,8 @@
                 <!-- Login Form -->
                 <form action="{% url 'accounts:login' %}?next={{ next }}" method="post" id="loginForm">
                   {% csrf_token %}
+                  {{ form.non_field_errors }}
+
               </div>
             </div>
           </div>
