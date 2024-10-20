@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 
@@ -25,3 +26,6 @@ def login_view(request):
             if user:
                 login(request, user)
 
+                # Redirect to 'next' if provided, else to home
+                if next_url:
+                    return redirect(next_url)
