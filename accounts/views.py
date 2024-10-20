@@ -16,3 +16,4 @@ def login_view(request):
     if request.method == "POST":
         form = AuthenticationForm(request=request, data=request.POST)
 
+        if form.is_valid():
