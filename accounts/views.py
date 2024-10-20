@@ -35,3 +35,8 @@ def login_view(request):
     else:
         form = AuthenticationForm()
 
+    # Render the login form and pass 'next' as context
+    context = {
+        'form': form,
+        'next': next_url,  # Pass 'next' to the template
+    }
