@@ -29,3 +29,6 @@ def login_view(request):
                 # Redirect to 'next' if provided, else to home
                 if next_url:
                     return redirect(next_url)
+                else:
+                    return redirect('/')
+
