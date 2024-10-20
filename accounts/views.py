@@ -14,3 +14,5 @@ def login_view(request):
     next_url = request.POST.get('next') or request.GET.get('next') or '/'
 
     if request.method == "POST":
+        form = AuthenticationForm(request=request, data=request.POST)
+
