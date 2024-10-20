@@ -198,3 +198,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.EmailOrUsernameModelBackend',  # Ensure this path is correct
+    'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
+]
