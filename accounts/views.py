@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, authenticate, logout
 
 
 # Create your views here.
@@ -19,3 +20,5 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
+            user = authenticate(request, username=username, password=password)
+
