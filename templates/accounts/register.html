@@ -30,6 +30,8 @@
 
                 <!-- Form: Remember to set form action and method -->
                 <form action="{% url 'accounts:register' %}" method="post">
+                  {% csrf_token %}
+
 
               </div>
             </div>
