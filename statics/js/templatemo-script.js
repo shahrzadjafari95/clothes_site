@@ -78,3 +78,53 @@ $(document).ready(function () {
         return false;
     });
 });
+
+
+<!-- JavaScript for validating the password dynamically -->
+document.getElementById('password1').addEventListener('input', function() {
+        const password = this.value;
+        const username = document.querySelector('input[name="username"]').value;
+
+        // Conditions to check
+        const lengthCondition = document.getElementById('condition-length');
+        const similarCondition = document.getElementById('condition-similar');
+        const commonCondition = document.getElementById('condition-common');
+        const numericCondition = document.getElementById('condition-numeric');
+
+        // Password must be at least 8 characters long
+        if (password.length >= 8) {
+            lengthCondition.classList.add('valid');
+            lengthCondition.classList.remove('invalid');
+        } else {
+            lengthCondition.classList.add('invalid');
+            lengthCondition.classList.remove('valid');
+        }
+
+        // Password should not be too similar to the username (simplified)
+        if (!password.toLowerCase().includes(username.toLowerCase())) {
+            similarCondition.classList.add('valid');
+            similarCondition.classList.remove('invalid');
+        } else {
+            similarCondition.classList.add('invalid');
+            similarCondition.classList.remove('valid');
+        }
+
+        // Password should not be entirely numeric
+        if (!/^\d+$/.test(password)) {
+            numericCondition.classList.add('valid');
+            numericCondition.classList.remove('invalid');
+        } else {
+            numericCondition.classList.add('invalid');
+            numericCondition.classList.remove('valid');
+        }
+
+        // For "commonly used passwords", in a real app you would have a list to compare
+        const commonPasswords = ['password', '123456', 'qwerty']; // example list
+        if (!commonPasswords.includes(password.toLowerCase())) {
+            commonCondition.classList.add('valid');
+            commonCondition.classList.remove('invalid');
+        } else {
+            commonCondition.classList.add('invalid');
+            commonCondition.classList.remove('valid');
+        }
+    });
