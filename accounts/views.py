@@ -54,3 +54,7 @@ def logout_view(request):
 
 
 def register(request):
+    # Redirect authenticated users to the home page
+    if request.user.is_authenticated:
+        return redirect('/')
+
