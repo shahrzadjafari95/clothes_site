@@ -52,7 +52,7 @@ section { padding: 50px 0; }
 	display: inline-block;
 	margin-bottom: 60px;
 }
-.templatemo-gray-bg { background: #EFEFEF; }
+.templatemo-gray-bg { background: black; }
 .templatemo-dark-bg {
 	background: #181818;
 	color: #DDD;
@@ -148,11 +148,11 @@ section { padding: 50px 0; }
 }
 .templatemo-social li {	margin-right: 20px; }
 .templatemo-social a {
-	color: white;
-	font-size: 1.4em;	
+	color: #D0AF51;
+	font-size: 1em;
 }
 .templatemo-social i {
-	background: #BBB;
+	background: #110F0F;
 	border-radius: 30px;
 	line-height: 30px;
 	width: 30px;
@@ -824,3 +824,18 @@ hr.gold-hr { border-color: #D0AF51; }
     font-size: 14px;
     color: #555;
 }
+
+.password-conditions {
+    font-size: 0.7em;
+    color: #ceaeae;
+    margin-top: 5px;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: #ceaeae;
+}
+
