@@ -32,6 +32,10 @@
                 <form action="{% url 'accounts:register' %}" method="post">
                   {% csrf_token %}
 
+                  <!-- Honeypot fields to prevent autofill -->
+                  <input type="text" style="display:none;">
+                  <input type="password" style="display:none;">
+
 
               </div>
             </div>
