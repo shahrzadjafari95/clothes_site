@@ -74,3 +74,6 @@ def register(request):
 
             if user is not None:
                 login(request, user)
+                # If next_url is present, redirect to the previous page
+                if next_url:
+                    return redirect(next_url)
