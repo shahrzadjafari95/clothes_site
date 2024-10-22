@@ -83,3 +83,6 @@ def register(request):
             # Handle registration failure here, show an error message
             return redirect('/')
 
+    else:
+        form = RegisterForm()
+
