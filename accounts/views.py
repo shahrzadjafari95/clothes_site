@@ -64,3 +64,6 @@ def register(request):
     if request.method == "POST":
         form = RegisterForm(data=request.POST)
 
+        if form.is_valid():
+            user = form.save()
+
