@@ -79,3 +79,7 @@ def register(request):
                     return redirect(next_url)
                 return redirect('/')  # Redirect to the home page if no 'next' URL
 
+        else:
+            # Handle registration failure here, show an error message
+            return redirect('/')
+
