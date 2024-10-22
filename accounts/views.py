@@ -61,3 +61,6 @@ def register(request):
     # Capture 'next' from POST or GET request (form or URL)
     next_url = request.POST.get('next') or request.GET.get('next')
 
+    if request.method == "POST":
+        form = RegisterForm(data=request.POST)
+
