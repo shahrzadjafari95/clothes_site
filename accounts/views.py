@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
@@ -47,3 +48,6 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
+    # - Use `HttpResponseRedirect(request.META.get('HTTP_REFERER'))` to redirect users back to the previous page after
+    # a specific action (e.g., form submission, comment posting).
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
