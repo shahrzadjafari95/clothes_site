@@ -51,3 +51,6 @@ def logout_view(request):
     # - Use `HttpResponseRedirect(request.META.get('HTTP_REFERER'))` to redirect users back to the previous page after
     # a specific action (e.g., form submission, comment posting).
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def register(request):
