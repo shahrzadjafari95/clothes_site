@@ -72,3 +72,5 @@ def register(request):
             password = form.cleaned_data.get("password1")
             user = authenticate(request, username=username_or_email, password=password)
 
+            if user is not None:
+                login(request, user)
