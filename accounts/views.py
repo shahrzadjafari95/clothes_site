@@ -70,3 +70,5 @@ def register(request):
             # Authenticate the user after registration
             username_or_email = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password1")
+            user = authenticate(request, username=username_or_email, password=password)
+
