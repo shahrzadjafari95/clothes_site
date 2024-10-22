@@ -77,3 +77,5 @@ def register(request):
                 # If next_url is present, redirect to the previous page
                 if next_url:
                     return redirect(next_url)
+                return redirect('/')  # Redirect to the home page if no 'next' URL
+
