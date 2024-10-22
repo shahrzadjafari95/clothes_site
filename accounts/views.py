@@ -86,3 +86,5 @@ def register(request):
     else:
         form = RegisterForm()
 
+    # Pass 'next' to the template context
+    context = {"form": form, 'next': next_url}
