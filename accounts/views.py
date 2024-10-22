@@ -58,3 +58,6 @@ def register(request):
     if request.user.is_authenticated:
         return redirect('/')
 
+    # Capture 'next' from POST or GET request (form or URL)
+    next_url = request.POST.get('next') or request.GET.get('next')
+
