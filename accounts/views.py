@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
+from accounts.forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -88,3 +89,4 @@ def register(request):
 
     # Pass 'next' to the template context
     context = {"form": form, 'next': next_url}
+    return render(request, 'accounts/register.html', context)
