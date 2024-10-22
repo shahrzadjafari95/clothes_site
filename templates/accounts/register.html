@@ -36,6 +36,9 @@
                   <input type="text" style="display:none;">
                   <input type="password" style="display:none;">
 
+                  <!-- Hidden input field to capture and pass the 'next' URL -->
+                  <input type="hidden" name="next" value="{{ next|default:'' }}">
+
 
               </div>
             </div>
