@@ -11,14 +11,16 @@
         </div>
     </div>
 
-    <!-- Hidden Div for Django Messages -->
-    <div id="popup-messages" style="display: none;">
-        {% if messages %}
-            {% for message in messages %}
-                <p class="{{ message.tags }}">{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-    </div>
+<!-- Hidden Div for Django Messages -->
+<div id="popup-messages" style="display: none;">
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+
+
 
         <section class="templatemo-container padding-0">
                 <div class="templatemo-block-left contact">
@@ -60,36 +62,37 @@
     <!-- JavaScript to Handle Popup -->
     <script>
         window.onload = function() {
-            var popupMessages = document.getElementById("popup-messages");
-            if (popupMessages.innerHTML.trim() !== "") {
-                var modal = document.getElementById("message-popup");
-                var modalMessageContent = document.getElementById("modal-message-content");
+    var popupMessages = document.getElementById("popup-messages");
 
-                // Retrieve the messages from the hidden div
-                modalMessageContent.innerHTML = popupMessages.innerHTML;
+    if (popupMessages.innerHTML.trim() !== "") {
+        var modal = document.getElementById("message-popup");
+        var modalMessageContent = document.getElementById("modal-message-content");
 
-                // Show the modal with fade-in effect
-                modal.style.display = "flex";
-                modal.classList.add("fade-in");
+        // Retrieve the messages from the hidden div
+        modalMessageContent.innerHTML = popupMessages.innerHTML;
 
-                // Close the modal when the user clicks the close button
-                document.querySelector(".close").onclick = function() {
-                    modal.classList.add("fade-out");
-                    setTimeout(function() {
-                        modal.style.display = "none";
-                        modal.classList.remove("fade-out");
-                    }, 500);  // Time for fade-out animation
-                };
+        // Show the modal with fade-in effect
+        modal.style.display = "flex";
+        modal.classList.add("fade-in");
 
-                // Automatically close the modal after 2 second
-                setTimeout(function() {
-                    modal.classList.add("fade-out");
-                    setTimeout(function() {
-                        modal.style.display = "none";
-                        modal.classList.remove("fade-out");
-                    }, 500);  // Time for fade-out animation
-                }, 2000);  // 2000ms = 2 second
-            }
+        // Close the modal when the user clicks the close button
+        document.querySelector(".close").onclick = function() {
+            modal.classList.add("fade-out");
+            setTimeout(function() {
+                modal.style.display = "none";
+                modal.classList.remove("fade-out");
+            }, 500);  // Time for fade-out animation
         };
+
+        // Automatically close the modal after 2 seconds
+        setTimeout(function() {
+            modal.classList.add("fade-out");
+            setTimeout(function() {
+                modal.style.display = "none";
+                modal.classList.remove("fade-out");
+            }, 500);  // Time for fade-out animation
+        }, 2000);  // 2000ms = 2 seconds
+    }
+};
     </script>
 {% endblock %}
