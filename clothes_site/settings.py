@@ -203,3 +203,15 @@ AUTHENTICATION_BACKENDS = [
     'accounts.backends.EmailOrUsernameModelBackend',  # Ensure this path is correct
     'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
 ]
+
+
+# Email settings for SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # e.g., 'smtp.gmail.com' for Gmail
+EMAIL_PORT = 587  # or 465 for SSL
+EMAIL_USE_TLS = True  # Use True if using TLS (587)
+EMAIL_USE_SSL = False  # Use False if using TLS
+EMAIL_HOST_USER = 'jafari.shahrzad95@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'azyk undr inan hbfy'  # Your email password
+DEFAULT_FROM_EMAIL = 'gold_clothes_site@gmail.com'  # From email (same as host email)
+
