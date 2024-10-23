@@ -4,6 +4,8 @@ from django.contrib.auth.views import (
     PasswordResetView,
     PasswordResetDoneView,
     PasswordResetConfirmView,
+    PasswordResetCompleteView
+)
 
 app_name = 'accounts'
 
@@ -21,3 +23,7 @@ urlpatterns = [
          PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'),
          name='password_reset_confirm'),
 
+    path('password-reset-complete/',
+         PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
+         name='password_reset_complete'),
+]
