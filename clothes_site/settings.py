@@ -215,3 +215,4 @@ EMAIL_HOST_USER = 'jafari.shahrzad95@gmail.com'  # Your email address
 EMAIL_HOST_PASSWORD = 'azyk undr inan hbfy'  # Your email password
 DEFAULT_FROM_EMAIL = 'gold_clothes_site@gmail.com'  # From email (same as host email)
 
+SITE_PROTOCOL = 'https'
