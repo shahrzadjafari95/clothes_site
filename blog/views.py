@@ -69,3 +69,4 @@ def single_blog(request, pid):
 
 
 def newsletter_view(request):
+    if request.method == 'POST':
