@@ -16,6 +16,9 @@ def blog_home(request, **kwargs):
         posts = posts.filter(author__username=kwargs['author'])
     if kwargs.get('tag_name') is not None:
         posts = posts.filter(tag__name=kwargs['tag_name'])
+
+    # Handle search queries
+    query = request.GET.get('q')
     posts = Paginator(posts, 3)  # posts that filter by above conditions
     try:
         page_number = request.GET.get('page')
