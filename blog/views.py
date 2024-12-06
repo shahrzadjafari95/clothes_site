@@ -1,8 +1,9 @@
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .forms import CommentForm
+from .forms import CommentForm, NewsletterForm
 from .models import Post, Comment
 
 
@@ -78,3 +79,4 @@ def newsletter_view(request):
             messages.error(request, 'There was an error with your submission. Please try again.')
     else:
         form = NewsletterForm()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'), {'form': form})  # redirect to referring page
