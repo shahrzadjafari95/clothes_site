@@ -76,3 +76,5 @@ class Comment(models.Model):
 
 
 class Newsletter(models.Model):
+    email = models.EmailField()
+
