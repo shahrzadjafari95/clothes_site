@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post, Category, Comment
+from blog.models import Post, Category, Comment, Newsletter
 from rangefilter.filters import DateRangeFilter
 from django_admin_filters import MultiChoice
 from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
@@ -47,3 +47,4 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Newsletter)
