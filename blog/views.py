@@ -66,3 +66,6 @@ def single_blog(request, pid):
     }
 
     return render(request, 'blog/single-blog.html', contex)
+
+
+def newsletter_view(request):
