@@ -76,3 +76,5 @@ def newsletter_view(request):
             messages.success(request, 'Thank you for subscribing to our newsletter!')
         else:
             messages.error(request, 'There was an error with your submission. Please try again.')
+    else:
+        form = NewsletterForm()
