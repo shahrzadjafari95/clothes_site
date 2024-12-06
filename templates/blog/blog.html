@@ -3,7 +3,7 @@
 {% load blog_tags %}
 {% block content %}
 
-        <!-- "Latest News" -->
+<!-- "Latest News" -->
 <div class="container" xmlns:color="http://www.w3.org/1999/xhtml">
     <div class="row">
         <!-- Enhanced Popup Modal -->
@@ -23,105 +23,102 @@
             {% endif %}
         </div>
 
+        <!-- Main content -->
+        <section class="col-lg-8 col-md-8">
             <div class="row">
-                <!-- Main content -->
-              <section class="col-lg-8 col-md-8">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="text-uppercase">Latest News</h2>
-                        <hr class="templatemo-section-header-hr">
-                        <p class="text-uppercase templatemo-section-subheader margin-bottom-0">View All Posts</p>
-                    </div>
+                <div class="col-lg-12">
+                    <h2 class="text-uppercase">Latest News</h2>
+                    <hr class="templatemo-section-header-hr">
+                    <p class="text-uppercase templatemo-section-subheader margin-bottom-0">View All Posts</p>
                 </div>
-                <div class="row">
-                    {% for post in posts %}
-                    <div class="col-lg-12">
-                        <article class="templatemo-blog-post">
-                            <div class="post-img-container">
-                                <img src="{{post.img.url}}" alt="Post 1" class="post-img img-responsive">
-                                <div class="templatemo-post-social">
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-heart fa-2x red-bg"></i>
-                                    </div>
-                                    <div class="flex-center margin-top-10">
-                                        <i class="fa fa-comments-o fa-2x gold-bg"></i>
-                                    </div>
-                                </div>
-                                <div class="templatemo-post-date gold-text">
-                                    <div>
-                                        <div class="text-center date">{{post.published_date|date:"d "}}</div>
-                                        <div class="text-center">{{post.published_date|date:"M Y"}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10" >
-                                    <h3 class="text-uppercase">{{post.title}}</h3>
-                                </a>
-                            </div>
-                            <div class="post-meta-data">
-                                <p class="gold-text"><i>
-                                    Posted by: <a class="gold-text" href="{% url 'blog:author' author=post.author %}">
-                                    {{post.author.get_full_name}} </a>/
-                                    Categories:
-                                    {% for cat in post.category.all %}
-                                    <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
-                                    {%if not forloop.last%},{%endif%}
-                                    {% endfor %} /
-                                    Comments: {% comment_count pid=post.id %} /
-                                    Views: {{post.counted_view}}</i>
-                                </p>
-                            </div>
-                            <div class="post-excerpt gray-text">
-                                <p>{{post.content|truncatewords:20}}</p>
-                            </div>
-                            <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10 post-read-more">
-                                <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
-                            </a>
-                            <hr>
-                        </article>
-                    </div>
-                    {% endfor%}
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-right">
-                        <div class="pagination-wrap blog-post-pagination">
-
-                            <ul class="pagination">
-                                {% if posts.has_previous %}
-                                <li>
-                                    <a href="?page=1">&laquo; first</a>
-                                </li>
-                                {% endif %}
-                                {% for i in posts.paginator.page_range %}
-                                {% if posts.number == i %}
-                                <li class="active"><a href="?page={{i}}">{{i}} <span class="sr-only">(current)</span></a></li>
-                                {% else %}
-                                <li><a href="?page={{i}}">{{i}} <span class="sr-only"></span></a></li>
-                                {% endif %}
-                                {% endfor %}
-                                {% if posts.has_next %}
-                                <li>
-                                    <a href="?page={{posts.next_page_number}}" aria-label="Next">
-                                        <span aria-hidden="true"><i class="fa fa-play"></i></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section> <!-- end "Latest News" -->
-            <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
-                {% categories %}
-                {% popular_post 3 %}
-                {% latest_post %}
-            </aside>
             </div>
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-lg-12">
+                    <article class="templatemo-blog-post">
+                        <div class="post-img-container">
+                            <img src="{{post.img.url}}" alt="Post 1" class="post-img img-responsive">
+                            <div class="templatemo-post-social">
+                                <div class="flex-center margin-top-10">
+                                    <i class="fa fa-heart fa-2x red-bg"></i>
+                                </div>
+                                <div class="flex-center margin-top-10">
+                                    <i class="fa fa-comments-o fa-2x gold-bg"></i>
+                                </div>
+                            </div>
+                            <div class="templatemo-post-date gold-text">
+                                <div>
+                                    <div class="text-center date">{{post.published_date|date:"d "}}</div>
+                                    <div class="text-center">{{post.published_date|date:"M Y"}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10" >
+                                <h3 class="text-uppercase">{{post.title}}</h3>
+                            </a>
+                        </div>
+                        <div class="post-meta-data">
+                            <p class="gold-text"><i>
+                                Posted by: <a class="gold-text" href="{% url 'blog:author' author=post.author %}">
+                                {{post.author.get_full_name}} </a>/
+                                Categories:
+                                {% for cat in post.category.all %}
+                                <a  class="gold-text" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }} </a>
+                                {%if not forloop.last%},{%endif%}
+                                {% endfor %} /
+                                Comments: {% comment_count pid=post.id %} /
+                                Views: {{post.counted_view}}</i>
+                            </p>
+                        </div>
+                        <div class="post-excerpt gray-text">
+                            <p>{{post.content|truncatewords:20}}</p>
+                        </div>
+                        <a href="{% url 'blog:single-blog' pid=post.id %}" class="gray-text margin-top-10 post-read-more">
+                            <i class="fa fa-arrow-circle-o-right fa-2x v-align-middle"></i> Read More
+                        </a>
+                        <hr>
+                    </article>
+                </div>
+                {% endfor%}
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    <div class="pagination-wrap blog-post-pagination">
+
+                        <ul class="pagination">
+                            {% if posts.has_previous %}
+                            <li>
+                                <a href="?page=1">&laquo; first</a>
+                            </li>
+                            {% endif %}
+                            {% for i in posts.paginator.page_range %}
+                            {% if posts.number == i %}
+                            <li class="active"><a href="?page={{i}}">{{i}} <span class="sr-only">(current)</span></a></li>
+                            {% else %}
+                            <li><a href="?page={{i}}">{{i}} <span class="sr-only"></span></a></li>
+                            {% endif %}
+                            {% endfor %}
+                            {% if posts.has_next %}
+                            <li>
+                                <a href="?page={{posts.next_page_number}}" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fa fa-play"></i></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- end "Latest News" -->
+        <aside class="col-lg-4 col-md-4 templatemo-blog-post-aside">
             {% include 'blog/search.html' %}
+            {% categories %}
+            {% popular_post 3 %}
+            {% latest_post %}
             {% include 'blog/newsletter.html' %}
         </aside>
     <script>
@@ -161,3 +158,5 @@
     </div>
 </div>
 {% endblock %}
+
+
