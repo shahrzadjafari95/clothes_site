@@ -70,3 +70,7 @@ def single_blog(request, pid):
 
 def newsletter_view(request):
     if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thank you for subscribing to our newsletter!')
