@@ -19,6 +19,8 @@ def blog_home(request, **kwargs):
 
     # Handle search queries
     query = request.GET.get('q')
+    if query:
+        posts = posts.filter(
     posts = Paginator(posts, 3)  # posts that filter by above conditions
     try:
         page_number = request.GET.get('page')
