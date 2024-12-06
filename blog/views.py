@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
@@ -21,6 +22,11 @@ def blog_home(request, **kwargs):
     query = request.GET.get('q')
     if query:
         posts = posts.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(author__username__icontains=query)  # Include author in search
+        )
+
     posts = Paginator(posts, 3)  # posts that filter by above conditions
     try:
         page_number = request.GET.get('page')
