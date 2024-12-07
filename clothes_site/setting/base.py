@@ -13,3 +13,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "statics",  # Your uncompressed CSS/JS
 ]
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',  # Default finder
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',  # Default finder
+    'compressor.finders.CompressorFinder',  # Required for Django Compressor
+]
+
