@@ -18,8 +18,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.urls import path, include
-
+from django.urls import path, include, re_path
+from . import views
 from blog.sitemaps import BlogSitemap
 from clothes.sitemaps import StaticViewSitemap
 
@@ -50,3 +50,8 @@ if settings.MAINTENANCE_MODE:
 urlpatterns = []
 
 
+if settings.MAINTENANCE_MODE:
+    # Redirect all traffic to the maintenance view
+    urlpatterns += [
+        re_path(r'^.*$', views.maintenance_view),  # Catch-all URL
+    ]
