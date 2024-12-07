@@ -99,8 +99,9 @@
         </footer>
 
         <!-- JS -->
+        {% compress js %}
         <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>      <!-- jQuery -->
         <script type="text/javascript" src="{% static 'js/templatemo-script.js' %}"></script>      <!-- Templatemo Script -->
-
+        {% endcompress %}
 </body>
 </html>
