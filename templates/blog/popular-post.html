@@ -6,7 +6,7 @@
     <article class="aside-post-excerpt">
         <h5 class="text-uppercase"><a href="{% url 'blog:single-blog' pid=post.id%}">{{post.title}}</a></h5>
         <p class="gold-text"><i>{{post.published_date|date:'d M Y'}} ({{post.published_date|naturaltime}})</i></p>
-        <p><b><i>views: {{post.counted_view}} / author: {{post.author.get_full_name}}</i></b></p>
+        <p><b><i>views: {{post.counted_view}} / author: {{post.author.username}}</i></b></p>
     </article>
     {% endfor %}
 </div> <!-- /.aside-block -->
