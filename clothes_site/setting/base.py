@@ -19,3 +19,9 @@ STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder',  # Required for Django Compressor
 ]
 
+
+# Django Compressor settings
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_URL = STATIC_URL
+COMPRESS_STORAGE = 'compressor.storage.CompressorFileStorage'
+
