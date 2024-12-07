@@ -9,3 +9,7 @@ COMPRESS_OFFLINE = True  # Enables offline compression (recommended for producti
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "statics",  # Your uncompressed CSS/JS
+]
+
