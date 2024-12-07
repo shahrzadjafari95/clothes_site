@@ -42,3 +42,8 @@ urlpatterns = [
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Define handler404 and handler500 for redirecting to maintenance
+if settings.MAINTENANCE_MODE:
+    handler404 = 'clothes_site.views.maintenance_view'
+    handler500 = 'clothes_site.views.maintenance_view'  # handle 500 errors during maintenance
+
