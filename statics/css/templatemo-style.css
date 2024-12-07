@@ -839,3 +839,64 @@ hr.gold-hr { border-color: #D0AF51; }
     color: #ceaeae;
 }
 
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-left: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.search-button i {
+    pointer-events: none; /* To prevent interaction with the icon */
+}
+
+.messages {
+    margin: 20px 0;
+}
+.alert {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
