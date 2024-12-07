@@ -32,7 +32,7 @@ def men(request, **kwargs):
     # Filter products by the category name passed in the URL
     if kwargs.get('cat_name') is not None:
         products = products.filter(category__name_category=kwargs['cat_name'])
-    products = Paginator(products, 9)  # Show 9 products per page
+    products = Paginator(products, 8)  # Show 8 products per page
     try:
         # Get the page number from the request's GET parameters
         page_number = request.GET.get('page')
@@ -51,7 +51,7 @@ def women(request, **kwargs):
                                                published_date__lte=timezone.now())
     if kwargs.get('cat_name') is not None:
         products = products.filter(category__name_category=kwargs['cat_name'])
-    products = Paginator(products, 9)  # Show 9 products per page
+    products = Paginator(products, 8)  # Show 8 products per page
     try:
         # Get the page number from the request's GET parameters
         page_number = request.GET.get('page')
