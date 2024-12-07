@@ -42,6 +42,8 @@ if settings.MAINTENANCE_MODE:
         re_path(r'^.*$', views.maintenance_view),  # Catch-all URL
     ]
 else:
+    # Regular site URLs
+    handler404 = 'clothes_site.views.custom_404_view'
     urlpatterns = [
         path('admin/', admin.site.urls),
         path('', include('django.contrib.auth.urls')),
