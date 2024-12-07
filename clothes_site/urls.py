@@ -47,3 +47,6 @@ if settings.MAINTENANCE_MODE:
     handler404 = 'clothes_site.views.maintenance_view'
     handler500 = 'clothes_site.views.maintenance_view'  # handle 500 errors during maintenance
 
+urlpatterns = []
+
+
