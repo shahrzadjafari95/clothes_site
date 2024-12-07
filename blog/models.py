@@ -77,9 +77,8 @@ class Post(models.Model):
         ordering = ['-created_date']
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return self.title
 
-    # define an url for post based on id
     def get_absolute_url(self):
         return reverse('blog:single-blog', kwargs={'pid': self.pk})
 
