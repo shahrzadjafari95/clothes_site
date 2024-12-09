@@ -38,3 +38,13 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
 ]
 
+# Email setting for SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # e.g., 'smtp.gmail.com' for Gmail
+EMAIL_PORT = 587  # or 465 for SSL
+EMAIL_USE_TLS = True  # Use True if using TLS (587)
+EMAIL_USE_SSL = False  # Use False if using TLS
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')  # From email (same as host email)
+
