@@ -24,6 +24,8 @@ DATABASES = {
 }
 
 
+CSRF_COOKIES_SECURE = True
+
 STATICFILES_DIRS = [
     BASE_DIR / "statics",
 ]
@@ -48,3 +50,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')  # From email (same as host email)
 
+CSRF_COOKIE_SECURE = True  # Ensures CSRF cookie is sent only over HTTPS
+CSRF_COOKIE_SAMESITE = 'Lax'  # Prevents third-party access to cookies
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
