@@ -23,6 +23,10 @@ DATABASES = {
     }
 }
 
+# sitemap setting
+
+# site_id in cpanel
+SITE_ID = 3
 
 CSRF_COOKIES_SECURE = True
 
