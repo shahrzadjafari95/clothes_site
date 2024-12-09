@@ -23,3 +23,18 @@ DATABASES = {
     }
 }
 
+
+STATICFILES_DIRS = [
+    BASE_DIR / "statics",
+]
+
+# settings in cpanel
+STATIC_ROOT = '/home/bestblog/public_html/static'  # setting for collect statics command
+MEDIA_ROOT = '/home/bestblog/public_html/media'
+
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.EmailOrUsernameModelBackend',  # Ensure this path is correct
+    'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
+]
+
